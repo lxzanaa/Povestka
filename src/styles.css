@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Inter";
+    src: "../fonts/Inter-VariableFont_opsz,wght.ttf";
+    font-weight: normal !important;
+}
+
+body {
+    font-family: 'Inter';
+}
+
+
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 0 0 4px rgba(66, 184, 70, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(66, 184, 70, 0.15);
+    }
+
+    100% {
+        box-shadow: 0 0 0 4px rgba(66, 184, 70, 0.3);
+    }
+}
+
+.pulse-ring {
+    animation: pulse-ring 2s infinite;
+}
+.menu-link {
+    color: #6D758F;
+    font-weight: 600;
+}
+
+.menu-link:hover {
+    color: #444A5C;
+}
+
+.nav-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1.3px;
+    background-color: #444A5C;
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover::before {
+    transform: scaleX(1);
+}
+
+.nav-item.from-left::before {
+    transform-origin: left;
+}
+
+.nav-item.from-right::before {
+    transform-origin: right;
+}
+
+.nav-item.active::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-item.active .menu-link {
+    color: #444A5C;
+}
+
+.footer-link {
+    color: #6D758F;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+    padding-bottom: 4px;
+}
+
+.footer-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1.3px;
+    background-color: #444A5C;
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.footer-link:hover::before {
+    transform: scaleX(1);
+}
+
+.footer-link.from-left::before {
+    transform-origin: left;
+}
+
+.footer-link.from-right::before {
+    transform-origin: right;
+}
+
+.footer-link.active::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.footer-link.active {
+    color: #444A5C;
+}
+
+.footer-link:hover {
+    color: #444A5C;
+}
